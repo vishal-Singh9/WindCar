@@ -1,0 +1,109 @@
+/* Statistics Section Styles */
+.statistics-section {
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* gradient background */
+    padding: 80px 20px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+  }
+  
+  .statistics-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .statistics-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .counter-column {
+    flex: 1 1 30%;
+    max-width: 300px;
+    padding: 20px;
+  }
+  
+  .counter-box {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  
+  .counter-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  .counter-number {
+    font-size: 4rem;
+    color: #fff;
+    font-weight: 700;
+    background: #ff5722;
+    padding: 20px 30px;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    margin-bottom: 15px;
+    animation: bounceIn 1s ease-in-out;
+  }
+  
+  .counter-title {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+  }
+  
+  .counter-title:before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #ff5722;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .counter-box:hover .counter-title:before {
+    transform: scaleX(1);
+  }
+  
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .statistics-row {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .counter-column {
+      max-width: 90%;
+    }
+  }
+  
