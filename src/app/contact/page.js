@@ -153,7 +153,7 @@ export default function Contact() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 flex justify-end"
+      <div className="max-w-8xl mx-auto px-6 lg:px-8 py-20 flex justify-end"
         style={{ backgroundImage: "url('https://www.rolls-roycemotorcars.com/content/dam/rrmc/marketUK/rollsroycemotorcars_com/blue-shadow_cullinan/page-properties/D-Bespoke-Update.jpg/jcr:content/renditions/original')", backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}>
         <div className="w-full max-w-2xl p-6 bg-white shadow-lg rounded-lg" >
           <h2 className="text-2xl font-bold mb-6">Get in Touch</h2>

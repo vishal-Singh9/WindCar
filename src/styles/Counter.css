@@ -1,6 +1,11 @@
 /* Statistics Section Styles */
 .statistics-section {
-    background: linear-gradient(to right, #ff7e5f, #feb47b); /* gradient background */
+   background-image:url('https://wallpaperbat.com/img/864020-dark-cars-wallpaper.png');
+   background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+   
     padding: 80px 20px;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
@@ -73,7 +78,7 @@
     left: 0;
     width: 100%;
     height: 3px;
-    background: #ff5722;
+   
     transform: scaleX(0);
     transition: transform 0.3s ease;
   }

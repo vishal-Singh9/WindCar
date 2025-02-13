@@ -45,16 +45,19 @@ export default function OurSupport() {
   };
 
   return (
+    <div  style={{ backgroundImage: `url('https://i.pinimg.com/736x/4c/25/ab/4c25ab264539ced3ff06d09775ba52db.jpg')` , backgroundSize: 'cover', backgroundPosition: 'center' ,backgroundAttachment: 'fixed'}}>
+
+
     <div className="max-w-4xl mx-auto p-8">
       {/* Header */}
       <div className="text-center">
         <span className="bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold">
           Our Support
         </span>
-        <h3 className="text-4xl font-bold text-gray-900 mt-4">
+        <h3 className="text-4xl font-bold text-white mt-4">
           Frequently Asked Questions
         </h3>
-      </div>
+      </div>  
 
       {/* FAQ List */}
       <div className="mt-8 space-y-4">
@@ -102,6 +105,7 @@ export default function OurSupport() {
           Help Center
         </a>
       </div>
+    </div>
     </div>
   );
 }
