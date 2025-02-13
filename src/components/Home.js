@@ -5,7 +5,7 @@ import FeaturedCars from "./FeaturedCars";
 
 const Home = () => {
   return (
-    <div className="home">
+    <div className="home" >
       <header className="hero">
         <h1>Find Your Dream Vehicle Today!</h1>
         <p>Explore the best deals on cars, bikes, and more.</p>
