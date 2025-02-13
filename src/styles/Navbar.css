@@ -6,7 +6,7 @@
     width: 100%;
     height: 100px;
     background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-    backdrop-filter: blur(8px); /* Adds a blur effect */
+    backdrop-filter: blur(8px); /* Blur effect */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -17,21 +17,27 @@
 
 /* Logo */
 .navbar .logo {
-    font-size: 4rem;
-  font-weight: bold;
-  color: #fff;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 .navbar .logo img {
-    height: 150px;
+    height: 60px;
     width: auto;
     cursor: pointer;
 }
 
 /* Navbar Links */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
 .navbar a {
     color: white;
     font-size: 1.1rem;
@@ -69,6 +75,7 @@
     visibility: hidden;
     transform: translateY(10px);
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    z-index: 1000;
 }
 
 /* Show dropdown on hover */
@@ -94,11 +101,66 @@
 }
 
 /* Responsive Navbar */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    background: white;
+    height: 3px;
+    width: 30px;
+    margin: 5px 0;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Mobile Navigation */
+@media (max-width: 1024px) {
+    .navbar {
+        height: 70px;
+        padding: 0 15px;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        gap: 0;
+        padding: 10px 0;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-links.open {
+        transform: translateY(0);
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+/* Tablet & Smaller Devices */
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column;
-        height: auto;
-        padding: 10px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .logo img {
+        height: 50px;
     }
 
     .dropdown {

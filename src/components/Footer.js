@@ -39,11 +39,11 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4 mt-4">
               {footerLinks.Connect.map((social) => (
-                <a key={social.label} href={social.href} className="p-2 bg-gray-800 rounded-full">
+                <Link key={social.label} href={social.href} className="p-2 bg-gray-800 rounded-full">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={social.icon} />
                   </svg>
-                </a>
+                </Link>
               ))}
             </div>
           </div>

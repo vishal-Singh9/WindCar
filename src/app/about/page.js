@@ -19,7 +19,7 @@ const team = [
     name: "John Smith",
     role: "CEO & Founder",
     image: John,
-    bio: "Leading CarWind with 15+ years of expertise in luxury rentals.",
+    bio: "Leading WindCar with 15+ years of expertise in luxury rentals.",
   },
   {
     name: "Sarah Johnson",
@@ -43,7 +43,7 @@ const team = [
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 mt-20">
       {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -86,7 +86,7 @@ export default function About() {
               Our Journey
             </h2>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Founded in 2015, CarWind has grown into a trusted premium car rental service, offering an exclusive fleet of luxury and high-performance vehicles.
+              Founded in 2015, WindCar has grown into a trusted premium car rental service, offering an exclusive fleet of luxury and high-performance vehicles.
             </p>
             <p className="text-gray-600 leading-relaxed">
               We prioritize customer satisfaction, ensuring that every ride is a seamless and elite experience.

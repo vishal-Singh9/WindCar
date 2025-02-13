@@ -1,7 +1,6 @@
 'use client'
 import React from "react";
 import '../styles/Home.css'
-import FeaturedCars from "./FeaturedCars";
 
 const Home = () => {
   return (
@@ -13,7 +12,6 @@ const Home = () => {
      
         </div>
       </header>
-<FeaturedCars/>
     </div>
   );
 };
