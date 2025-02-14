@@ -1,5 +1,5 @@
-import { Car } from "../../../../../models/Car";
-import { db } from "../../../../../lib/db";
+import { Car } from "../../../../models/Car";
+import { db } from "../../../../lib/db";
 import { ObjectId } from "mongodb";
 
 export async function GET(req, { params }) {

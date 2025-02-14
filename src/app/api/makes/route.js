@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { db } from "../../../../lib/db";
-import { Make } from "../../../../models/Car";
+import { db } from "../../../lib/db";
+import { Make } from "../../../models/Car";
 
 
 

@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { db } from '../../../../../lib/db';
+import { db } from '../../../../../lib/db'
 import { Car } from '../../../../../models/Car';
 
 export async function GET(req, { params }) {

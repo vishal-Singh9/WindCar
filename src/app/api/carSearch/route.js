@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import {CarSearch} from "../../../../models/Car";
-import { db } from "../../../../lib/db";
+import {CarSearch} from "../../../models/Car";
+import { db } from "../../../lib/db";
 
 
 export async function POST(request) {
