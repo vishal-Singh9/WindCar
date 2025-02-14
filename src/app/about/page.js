@@ -7,12 +7,7 @@ import Michael from '../../../public/michael.jpeg'
 import Emma from '../../../public/emma.jpg'
 import { motion } from "framer-motion";
 
-const stats = [
-  { label: "Years of Experience", value: "10+" },
-  { label: "Premium Vehicles", value: "100+" },
-  { label: "Happy Customers", value: "50K+" },
-  { label: "Cities Served", value: "25+" },
-];
+
 
 const team = [
   {
@@ -109,24 +104,10 @@ export default function About() {
           </motion.div>
         </div>
 
-        {/* Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center my-16">
-          {stats.map((stat, index) => (
-            <motion.div
-              key={index}
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="p-6 border rounded-lg shadow-md bg-gradient-to-r from-blue-500 to-blue-700 text-white transform transition hover:scale-105 hover:shadow-xl"
-            >
-              <div className="text-4xl font-extrabold">{stat.value}</div>
-              <div className="text-lg font-semibold">{stat.label}</div>
-            </motion.div>
-          ))}
-        </div>
+      
 
         {/* Meet Our Team */}
-        <div className="text-center">
+        <div className="text-center mt-16">
           <h2 className="text-4xl font-extrabold text-gray-900 mb-4">Meet Our Team</h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
           <p className="text-gray-600 max-w-2xl mx-auto mb-12">

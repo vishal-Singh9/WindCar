@@ -1,6 +1,9 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import '../styles/Counter.css'
+
+
+
 const Counter = ({ value, title1, title2 }) => {
   const counterRef = useRef();
 

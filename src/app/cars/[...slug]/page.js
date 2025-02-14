@@ -1,11 +1,10 @@
 import CarDetails from "../../../components/CarDetails";
 
-export default async function CarPage({ params }) {
-    const slug = await params.slug || [];
+export default function CarPage({ params }) {
 
     return (
         <div>
-            <CarDetails slug={slug} />
+            <CarDetails slug={params.slug} />
         </div>
     );
 }

@@ -23,11 +23,12 @@
     text-decoration: none;
     display: flex;
     align-items: center;
+  
 }
 
 .navbar .logo img {
-    height: 60px;
-    width: auto;
+   
+    width: 160px;
     cursor: pointer;
 }
 

@@ -1,39 +1,25 @@
+'use client';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import '../../styles/Makes.css';
-
-const carBrands = [
-    { name: 'Toyota', logo: '/brands/toyota-logo.png' },
-    { name: 'Honda', logo: '/brands/honda-logo.png' },
-    { name: 'Ford', logo: '/brands/ford-logo.png' },
-    { name: 'Tesla', logo: '/brands/tesla-logo.png' },
-    { name: 'BMW', logo: '/brands/bmw-logo.png' },
-    { name: 'Mercedes-Benz', logo: '/brands/mercedes-logo.png' },
-    { name: 'Nissan', logo: '/brands/nissan-logo.png' },
-    { name: 'Porsche', logo: '/brands/porsche-logo.png' },
-    { name: 'Audi', logo: '/brands/audi-logo.png' },
-    { name: 'Chevrolet', logo: '/brands/chevrolet-logo.png' }
-];
 
 export default function MakesPage() {
+    const [makes, setMakes] = useState([]);
+
+    useEffect(() => {
+        fetch('/api/makes')
+            .then(res => res.json())
+            .then(data => setMakes(data))
+            .catch(err => console.error(err));
+    }, []);
+
     return (
         <div className="makes-container">
             <h1>Car Brands</h1>
             <div className="makes-grid">
-                {carBrands.map((brand) => (
-                    <Link 
-                        key={brand.name} 
-                        href={`/makes/${brand.name.toLowerCase()}`} 
-                        className="make-card"
-                    >
-                        <div className="make-logo">
-                            <img 
-                                src={brand.logo} 
-                                alt={`${brand.name} logo`} 
-                                width={100} 
-                                height={100} 
-                            />
-                        </div>
-                        <h2>{brand.name}</h2>
+                {makes.map((make) => (
+                    <Link key={make._id} href={`/makes/${make.name.toLowerCase()}`} className="make-card">
+                        <img src={make.logo} alt={make.name} width={100} height={100} />
+                        <h2>{make.name}</h2>
                     </Link>
                 ))}
             </div>

@@ -2,12 +2,23 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Home.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import Image from "next/image";
+import FordMustang from '../../public/FordMustang.jpg';
+import BCA from '../../public/bc-a.jpg';
+import BCB from '../../public/bc-b.jpeg';
+import BCC from '../../public/bc-c.webp';
+import BCE from '../../public/bc-e.webp';
+import { SiTicktick } from "react-icons/si";
+import { useNavigate } from "react-router-dom";
+
+
 
 const images = [
-  "https://www.mwtv.in/storage/image/post/1920x1080/post_64f81817490f1.jpg",
-  "https://wallpapers.com/images/featured/4k-ultra-hd-mustang-vcoontzbldwccn6z.jpg",
-  "https://wallpapersmug.com/download/2248x2248/a56fb5/rolls-royce-wraith-luminary-collection-luxrious-2018-4k.jpeg",
-  "https://www.bmw.com/content/dam/bmw/marketBMWCOM/bmw_com/categories/Innovation/nfl/nfl-media-hd-02a.jpg",
+  BCA,
+  BCC,
+  BCE,
+  FordMustang,
+  BCB,
 ];
 
 const Home = () => {
@@ -54,10 +65,12 @@ const Home = () => {
               key={index}
               className={`slide ${index === currentIndex ? "active" : ""}`}
               style={{ backgroundImage: `url(${image})` }}
-            ></div>
+            >
+              {index === currentIndex && <Image src={image} alt={`Slide ${index}`} priority />}
+
+            </div>
           ))}
 
-          {/* Left & Right Buttons */}
           <button className="prev-btn" onClick={prevSlide}>
             <FaChevronLeft />
           </button>
@@ -67,8 +80,13 @@ const Home = () => {
         </div>
 
         <header className="hero">
-          <h1>Find Your Dream Vehicle Today!</h1>
-          <p>Explore the best deals on cars, bikes, and more.</p>
+          <p>Find Your Perfect Car!</p>
+          <h1>Looking For a Car? <br />You are in the perfect spot!</h1>
+          <ul>
+            <li> <SiTicktick /> High quality at a low cost.</li>
+            <li> <SiTicktick /> Premium services</li>
+            <li> <SiTicktick /> 24/7 roadside support.</li>
+          </ul>
           <div className="hero-buttons">
             <button className="btn-primary">Explore Now</button>
             <button className="btn-secondary">Learn More</button>

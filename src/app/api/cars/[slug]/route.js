@@ -4,7 +4,6 @@ import { ObjectId } from "mongodb";
 
 export async function GET(req, { params }) {
     const { slug } = params;
-    console.log(slug, "slug");
 
     let car;
     try {
@@ -25,7 +24,6 @@ export async function GET(req, { params }) {
         }
 
         car = await Car.findOne(query); // Fetch car based on the query
-        console.log(car, "car");
 
         if (!car) {
             return Response.json({ error: "Car not found" }, { status: 404 });

@@ -15,3 +15,14 @@ export async function GET() {
     }
   }
 
+  export async function POST(req) {
+    try {
+        await db.MongoDB(); // Ensure database connection is established
+        const { name, logo } = await req.json();
+        const newMake = new Make({ name, logo });
+        await newMake.save();
+        return NextResponse.json(newMake, { status: 201 });
+    } catch (error) {
+        return NextResponse.json({ error: 'Failed to create make' }, { status: 500 });
+    }}
+

@@ -1,13 +1,25 @@
-'use client'
-import React from 'react'
+'use client';
+import { useEffect, useState } from 'react';
+import { useParams } from 'next/navigation';
 
-const page = () => {
-  return (
-    <div>
-      <h1>oefhwpiehfwohe</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat corporis cumque dolorem laborum minima aliquid molestias maxime, ad animi eos velit repellat et hic pariatur tempora vel eius consectetur soluta!</p>
-    </div>
-  )
+export default function CarPage() {
+    const { make, carId } = useParams();
+    const [car, setCar] = useState(null);
+
+    useEffect(() => {
+        fetch(`/api/makes/${make}/${carId}`)
+            .then(res => res.json())
+            .then(data => setCar(data))
+            .catch(err => console.error(err));
+    }, [make, carId]);
+
+    if (!car) return <p>Loading...</p>;
+
+    return (
+        <div className="car-details">
+            <img src={car.image} alt={car.name} width={400} height={250} />
+            <h1>{car.name}</h1>
+            <p>Price: {car.price}</p>
+        </div>
+    );
 }
-
-export default page
