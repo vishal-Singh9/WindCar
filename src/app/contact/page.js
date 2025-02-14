@@ -151,11 +151,38 @@ export default function Contact() {
             </motion.div>
           ))}
         </div>
+        <div className="flex flex-col items-start px-6 text-center mt-9" >
+
+        <iframe
+    width="600"
+    height="350"
+    src="https://www.youtube.com/embed/54-NEylEUZE" 
+    title="YouTube video player"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+  ></iframe>  </div>
       </div>
 
       <div className="max-w-8xl mx-auto px-6 lg:px-8 py-20 flex justify-end"
         style={{ backgroundImage: "url('https://www.rolls-roycemotorcars.com/content/dam/rrmc/marketUK/rollsroycemotorcars_com/blue-shadow_cullinan/page-properties/D-Bespoke-Update.jpg/jcr:content/renditions/original')", backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}>
-        <div className="w-full max-w-2xl p-6 bg-white shadow-lg rounded-lg" >
+
+        <div className="flex flex-col items-center px-6 text-center">
+          <h1 className="text-4xl font-bold mb-6 text-white">Our Location</h1>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9161.69152318644!2d72.50482906977537!3d23.011752099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b3daed52865%3A0xd2f9b0181324a75f!2sAnand%20Travels!5e1!3m2!1sen!2sin!4v1739531687328!5m2!1sen!2sin"
+            width="500"
+            height="500"
+            className="border-0"
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+
+
+        </div>
+
+        <div className="w-full max-w-2xl p-6 bg-white shadow-lg rounded-lg flex flex-col justify-left items-center" >
           <h2 className="text-2xl font-bold mb-6">Get in Touch</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
@@ -256,6 +283,8 @@ export default function Contact() {
             </button>
           </form>
         </div>
+
+
       </div>
 
 
