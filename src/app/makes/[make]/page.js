@@ -22,7 +22,7 @@ async function getCars(make) {
 }
 
 export default async function MakePage({ params }) {
-    const { make } = params;
+    const { make } = await params;
     const cars = await getCars(make);
 
     if (!cars) {

@@ -3,7 +3,7 @@ import '../styles/Navbar.css';
 
 export default async function Navbar() {
   // Fetch makes on the server
-  const res = await fetch("http://localhost:3000/api/makes", { cache: "no-store" });
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/makes`, { cache: "no-store" });
   const makes = await res.json();
 
   return (
@@ -24,7 +24,6 @@ export default async function Navbar() {
           <span>Makes</span>
           <ul className="dropdown-menu">
             {makes.map((make) => (
-              console.log(make.name),
               <li key={make._id}>
                 <Link href={`/makes/${make.name.toLowerCase()}`}>
                   {make.name}
