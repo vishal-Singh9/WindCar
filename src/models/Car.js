@@ -16,9 +16,8 @@ const CarSchema = new mongoose.Schema({
   seats: Number,
 
   make: { type: mongoose.Schema.Types.ObjectId, ref: 'Make', required: true },
+  model: { type: mongoose.Schema.Types.ObjectId, ref: 'Model', required: true },
 });
-
-
 
 const MakeSchema = new mongoose.Schema({
   name: { type: String, required: true, unique: true },

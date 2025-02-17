@@ -3,7 +3,7 @@ import { db } from "../../../../lib/db";
 import { ObjectId } from "mongodb";
 
 export async function GET(req, { params }) {
-    const { slug } = params;
+    const { slug } = await  params;
 
     let car;
     try {
@@ -19,9 +19,9 @@ export async function GET(req, { params }) {
         };
 
         // Check if slug is a valid ObjectId and add it to the query if valid
-        if (ObjectId.isValid(slug)) {
-            query.$or.push({ _id: new ObjectId(slug) });
-        }
+        // if (ObjectId.isValid(slug)) {
+        //     query.$or.push({ _id: new ObjectId(slug) });
+        // }
 
         car = await Car.findOne(query); // Fetch car based on the query
 

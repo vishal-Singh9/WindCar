@@ -1,27 +1,29 @@
-import { notFound } from "next/navigation";
-import '../../../styles/CarDetails.css'
+import '../../../../styles/CarDetails.css'
+async function getCarDetails(make, carId) {
+    try {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/makes/${make}/${carId}`, {
+            cache: "no-store",
+        });
 
-export default async function CarDetails({ params }) {
- 
+        if (!res.ok) throw new Error("Failed to fetch car details");
 
-  
-  const { slug } = await params; 
-  console.log(slug)
-  let url = `${process.env.NEXT_PUBLIC_API_URL}`
+        return await res.json();
+    } catch (error) {
+        console.error("Error fetching car details:", error);
+        return null;
+    }
+}
 
-  try {
-    const res = await fetch(`${url}/api/cars/${slug}`, {
-      cache: "no-store", 
-    });
+export default async function CarDetailsPage({ params }) {
+    const { make, carId } = params;
+    const car = await getCarDetails(make, carId);
 
-    if (!res.ok) {
-      return notFound();
+    if (!car) {
+        return <p>Failed to load car details.</p>;
     }
 
-    const car = await res.json();
-
     return (
-      <div className="car-details-container">
+       <div className="car-details-container">
         {/* Left Section - Image Gallery */}
         <div className="car-images-section">
           <img className="main-car-image" src={car.thumbnail} alt={car.name || "Car"} />
@@ -71,8 +73,4 @@ export default async function CarDetails({ params }) {
         </div>
       </div>
     );
-  } catch (error) {
-    console.error("Error fetching car data:", error);
-    return notFound();
-  }
 }

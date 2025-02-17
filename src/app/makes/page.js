@@ -1,16 +1,8 @@
-'use client';
-import { useEffect, useState } from 'react';
 import Link from 'next/link';
-
-export default function MakesPage() {
-    const [makes, setMakes] = useState([]);
-
-    useEffect(() => {
-        fetch('/api/makes')
-            .then(res => res.json())
-            .then(data => setMakes(data))
-            .catch(err => console.error(err));
-    }, []);
+import '../../styles/Makes.css'
+export default async function MakesPage() {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/makes`, { cache: 'no-store' });
+    const makes = await res.json();
 
     return (
         <div className="makes-container">
