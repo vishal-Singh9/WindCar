@@ -3,10 +3,11 @@ import '../styles/Navbar.css';
 
 export default async function Navbar() {
   let url = `${process.env.NEXT_PUBLIC_API_URL}`;
-  
+
 
   const res = await fetch(`${url}/api/makes`, { cache: "no-store" });
   const makes = await res.json();
+  console.log("🚀 ~ Navbar ~ makes:", makes)
 
   return (
     <nav className="navbar">
@@ -52,7 +53,7 @@ export default async function Navbar() {
               <Link href="/categories/economy">Economy</Link>
             </li>
           </ul>
-       
+
         </div>
 
         <Link href="/about">About</Link>
