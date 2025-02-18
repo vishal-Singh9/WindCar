@@ -2,10 +2,15 @@ import Link from "next/link";
 import '../styles/Navbar.css';
 
 export default async function Navbar() {
+  let url = `${process.env.NEXT_PUBLIC_API_URL}`;
+  if (process.env.NODE_ENV === "development") {
+    url = "http://localhost:3000";
+  }
+  else {
+    url = "https://windcar.vercel.app";
+  } 
 
-  
-  // Fetch makes on the server
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/makes`, { cache: "no-store" });
+  const res = await fetch(`${url}/api/makes`, { cache: "no-store" });
   const makes = await res.json();
 
   return (

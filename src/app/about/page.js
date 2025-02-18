@@ -45,7 +45,18 @@ export default function About() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
         className="relative bg-cover bg-center h-[450px] flex items-center justify-start text-white px-10"
-        style={{ backgroundImage: "url('https://carento-nextjs.vercel.app/assets/imgs/page-header/banner.png')" }}
+        style={{
+          backgroundImage: "url('https://carento-nextjs.vercel.app/assets/imgs/page-header/banner.png')", backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          border: "2px solid rgba(255, 255, 255, 0.5)",
+          boxShadow: "0px 0px 15px rgba(255, 255, 255, 0.2)",
+          width: "100%",
+          marginLeft: "auto",
+          marginRight: "auto",
+          maxWidth: "1750px",
+          height: "400px",
+        }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative text-left bg-white/10 backdrop-blur-md p-8 rounded-xl shadow-lg max-w-lg">
@@ -104,7 +115,7 @@ export default function About() {
           </motion.div>
         </div>
 
-      
+
 
         {/* Meet Our Team */}
         <div className="text-center mt-16">

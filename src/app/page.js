@@ -11,6 +11,8 @@ import Contact from './contact/page'
 import CarSearchForm from '@/components/CarSearchForm'
 import FeaturedCars from '@/components/FeaturedCars'
 import Brands from '@/components/Brands'
+import Testimonials from '@/components/Customer'
+import Newsletter from '@/components/Newsletter'
 
 const page = () => {
   return (
@@ -25,6 +27,8 @@ const page = () => {
       <About/>
       <OurSupport/>
       <Contact/>
+      <Testimonials/>
+      <Newsletter subscriberCount={1000}/>
       <Footer/>
     </div>
   )

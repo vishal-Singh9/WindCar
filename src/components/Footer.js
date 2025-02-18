@@ -26,7 +26,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-gray-900 text-white py-12">
-      <div className="container mx-auto px-6">
+      <div className="footer-container mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-12">
           {/* Brand Section */}
           <div className="lg:col-span-4">
@@ -64,30 +64,12 @@ export default function Footer() {
             </div>
           ))}
 
-          {/* Newsletter Section */}
-          <div className="lg:col-span-4">
-            <h3 className="text-lg font-semibold mb-4">Newsletter</h3>
-            <p className="text-gray-400 mb-4">
-              Subscribe to our newsletter for exclusive offers and the latest updates.
-            </p>
-            <form className="relative">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full p-3 rounded-lg bg-gray-800 text-white focus:outline-none"
-              />
-              <button type="submit" className="absolute right-3 top-3 text-gray-400 hover:text-white">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </button>
-            </form>
-          </div>
+         
         </div>
 
         {/* Bottom Bar */}
         <div className="mt-12 border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between text-gray-400 text-sm">
-          <p>&copy; {currentYear} CarWind. All rights reserved.</p>
+          <p>&copy; {currentYear} WindCar. All rights reserved.</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <Link href="#" className="hover:text-white">Terms & Conditions</Link>
             <Link href="#" className="hover:text-white">Privacy Policy</Link>

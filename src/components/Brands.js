@@ -17,7 +17,7 @@ const brands = [
 const Brands = () => {
   return (
     <div className="brands-section">
-      <h3 className="brands-title"><strong>Premium Brands</strong></h3>
+      <h1 className="brands-title"><strong>Premium Brands</strong></h1>
       <h2 className="brands-subtitle"><i>Unveil the Finest Selection of High-End Vehicles </i></h2>
       <div className="brands-slider">
         <div className="brands-track">
