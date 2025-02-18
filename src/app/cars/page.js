@@ -1,22 +1,23 @@
 import Link from "next/link";
-import '../../styles/CarList.css'
+import '../../styles/CarList.css';
 
 export default async function CarList() {
-    // Fetching data on the server side
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/cars`, { cache: "no-store" }); 
-    const cars = await res.json();
 
-
+const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/cars`);
+const cars = await res.json();
 
     return (
         <div className="container">
-            <h1>Available Cars</h1>
+ 
+
+            {/* Car List Section */}
+            <h1 className="text-center mt-8">Available Cars</h1>
             <ul className="car-list">
                 {cars.map((car) => (
                     <li key={car._id} className="car-item">
-                        <Link 
-                            href={`/cars/${car?.name || car?.slug}`} 
-                            target="_blank" 
+                        <Link
+                            href={`/cars/${car?.name || car?.slug}`}
+                            target="_blank"
                             rel="noopener noreferrer"
                         >
                             <div>
@@ -32,6 +33,6 @@ export default async function CarList() {
                     </li>
                 ))}
             </ul>
-        </div>
+       </div>
     );
 }

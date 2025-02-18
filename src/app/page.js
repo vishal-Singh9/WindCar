@@ -13,6 +13,8 @@ import FeaturedCars from '@/components/FeaturedCars'
 import Brands from '@/components/Brands'
 import Testimonials from '@/components/Customer'
 import Newsletter from '@/components/Newsletter'
+import DealOfTheWeek from '@/components/Deal'
+import GallerySection from '@/components/GallerySection'
 
 const page = () => {
   return (
@@ -21,12 +23,14 @@ const page = () => {
       <CarSearchForm/>
       <Brands/>
       <FeaturedCars/>
+      <DealOfTheWeek/>
       <OurMission/>
       <StatisticsSection/>
       <ServicesSection/>  
       <About/>
       <OurSupport/>
       <Contact/>
+      <GallerySection/>
       <Testimonials/>
       <Newsletter subscriberCount={1000}/>
       <Footer/>
