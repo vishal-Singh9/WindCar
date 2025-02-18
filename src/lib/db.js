@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-export const CarURL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000"
+export const CarURL = process.env.NEXT_PUBLIC_API_URL
 
 
 const MongoDB = async () => {
