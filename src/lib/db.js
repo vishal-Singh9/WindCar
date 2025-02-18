@@ -7,7 +7,7 @@ const MongoDB = async () => {
     try {
         await mongoose.connect('mongodb+srv://vishals:8UQ3ESXHIh0HmrLR@cluster0.imbdn.mongodb.net/WindCar');
 
-        console.log('Connected to MongoDB');
+        console.log('Connected to MongoDB   ');
     } catch (err) {
         console.log(err)
     }
