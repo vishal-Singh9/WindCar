@@ -3,14 +3,9 @@ import '../styles/Navbar.css';
 
 export default async function Navbar() {
 
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL.startsWith('http')
-  ? process.env.NEXT_PUBLIC_API_URL
-  : `https://${process.env.NEXT_PUBLIC_API_URL}`;
-
-const res = await fetch(`${apiUrl}/api/makes`, { cache: "no-store" });
-
+  
   // Fetch makes on the server
-  // const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/makes`, { cache: "no-store" });
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/makes`, { cache: "no-store" });
   const makes = await res.json();
 
   return (
