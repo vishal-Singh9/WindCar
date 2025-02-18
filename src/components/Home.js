@@ -4,19 +4,18 @@ import "../styles/Home.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Image from "next/image";
 import FordMustang from '../../public/FordMustang.jpg';
-import BCA from '../../public/bc-a.jpg';
-import BCB from '../../public/bc-b.jpeg';
+import BCA from '../../public/bc-a.webp';
+import BCB from '../../public/bc-b.webp';
 import BCC from '../../public/bc-c.webp';
 import BCE from '../../public/bc-e.webp';
 import { SiTicktick } from "react-icons/si";
-import { useNavigate } from "react-router-dom";
 
 
 
 const images = [
   BCA,
-  BCC,
   BCE,
+  BCC,
   FordMustang,
   BCB,
 ];

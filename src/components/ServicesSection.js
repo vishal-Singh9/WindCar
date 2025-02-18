@@ -1,11 +1,10 @@
-"use client";
 
 import Image from "next/image";
 import LuxuryCar from '../../public/luxuryy.jpg'
 import EconomyCar from '../../public/economy.webp'
 import SUVCar from '../../public/Suv .webp'
 import VanCar from '../../public/Van.webp'
-import ConvertibleCar from '../../public/convertible.jpeg'
+import ConvertibleCar from '../../public/convertible.webp'
 import ElectricCar from '../../public/electric.webp'
 
 import Link from "next/link";

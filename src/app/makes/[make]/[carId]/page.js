@@ -15,7 +15,7 @@ async function getCarDetails(make, carId) {
 }
 
 export default async function CarDetailsPage({ params }) {
-    const { make, carId } = params;
+    const { make, carId } = await params;
     const car = await getCarDetails(make, carId);
 
     if (!car) {

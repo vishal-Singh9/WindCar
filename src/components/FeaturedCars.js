@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Nissan from '../../public/Nissan.jpeg';
+import Nissan from '../../public/Nissan.webp';
 import Porsche from '../../public/porsche.webp';
-import Tesla from '../../public/teslas.avif';
+import Tesla from '../../public/teslas.webp';
 
 const featuredCars = [
   {

@@ -68,7 +68,6 @@ export default function Contact() {
 
       return;
     }
-    console.log("Form Submitted", formData); // Add your form submission logic here 
     setFormData({
       firstName: "",
       lastName: "",

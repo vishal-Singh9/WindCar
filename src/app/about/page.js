@@ -1,10 +1,10 @@
 "use client";
 import Image from "next/image";
-import Luxury from '../../../public/luxury.jpg'
-import John from '../../../public/john.jpg'
-import Sara from '../../../public/sara.jpg'
-import Michael from '../../../public/michael.jpeg'
-import Emma from '../../../public/emma.jpg'
+import Luxury from '../../../public/luxury.webp'
+import John from '../../../public/john.webp'
+import Sara from '../../../public/sara.webp'
+import Michael from '../../../public/michael.webp'
+import Emma from '../../../public/emma.webp'
 import { motion } from "framer-motion";
 
 
@@ -97,7 +97,7 @@ export default function About() {
             <Image
               src={Luxury}
               alt="Luxury Car"
-              layout="fill"
+              fill
               objectFit="cover"
               className="transform transition duration-500 hover:scale-110"
             />
