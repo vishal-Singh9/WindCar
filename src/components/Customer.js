@@ -7,23 +7,23 @@ import Star from '../../public/star.webp'
 import '../styles/Customer.css'
 
 const testimonials = [
-    {
-      id: 1,
-      name: "Emry",
-      image: Emry,
-      rating: 4,
-      review:
-        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Using Lorem Ipsum makes it look like readable English.",
-    },
-    {
-      id: 2,
-      name: "Williams Edward",
-      image: Williams,
-      rating: 4,
-      review:
-        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Using Lorem Ipsum makes it look like readable English.",
-    },
-  ];
+  {
+    id: 1,
+    name: "Emry",
+    image: Emry,
+    rating: 4,
+    review:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Using Lorem Ipsum makes it look like readable English.",
+  },
+  {
+    id: 2,
+    name: "Williams Edward",
+    image: Williams,
+    rating: 4,
+    review:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Using Lorem Ipsum makes it look like readable English.",
+  },
+];
 
 
 
@@ -51,7 +51,7 @@ export default function Testimonials() {
         <div className="heading">
           <h3> <strong>
             <span className="text-blue-500">What Our Customers Say</span>
-            </strong></h3>
+          </strong></h3>
         </div>
         <div className="testimonial-wrapper">
           {testimonials.map((t) => (
@@ -86,17 +86,16 @@ export default function Testimonials() {
           ))}
         </div>
         <div className="flex flex-col items-start px-6 text-center mt-9" >
-
           <iframe
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
             width="100%"
             height="350"
             src="https://www.youtube.com/embed/54-NEylEUZE"
             title="YouTube video player"
-            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-          >
-          </iframe>
+          ></iframe>
         </div>
       </div>
     </div>
