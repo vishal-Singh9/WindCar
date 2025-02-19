@@ -88,7 +88,6 @@ export default function Testimonials() {
         <div className="flex flex-col items-start px-6 text-center mt-9" >
           <iframe
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
             width="100%"
             height="350"
             src="https://www.youtube.com/embed/54-NEylEUZE"

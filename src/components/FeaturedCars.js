@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import background from '../../public/bbc.webp'
 import Link from 'next/link';
 import Nissan from '../../public/Nissan.webp';
 import Porsche from '../../public/porsche.webp';
@@ -50,12 +51,9 @@ export default function FeaturedCars() {
   return (
     <section
       className="relative py-16 bg-gray-100 text-center"
-      style={{
-        backgroundImage: "url('https://api.lakewanaka.co.nz/assets/Uploads/ImportedImages/2019-12-28-9__FocusFillWzI1NjAsMTQ0MCwieSIsMTYwXQ.jpg')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
+
     >
+      <Image src={background} alt="Background" layout="fill"></Image>
       {/* Blur Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-md"></div>
 

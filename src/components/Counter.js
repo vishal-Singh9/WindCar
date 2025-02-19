@@ -1,5 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from "react";
+import Image from "next/image";
+import back from '../../public/bbcc.webp'
 import '../styles/Counter.css'
 
 
@@ -49,8 +51,9 @@ const StatisticsSection = () => {
   ];
 
   return (
-    <section className="statistics-section">
-      <div className="statistics-container">
+    <section className="statistics-section" style={{ backgroundImage: `url(${back.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <div className="statistics-container" >
+
         <div className="statistics-row">
           {stats.map((stat, index) => (
             <Counter
