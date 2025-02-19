@@ -2,16 +2,12 @@ import { notFound } from "next/navigation";
 import '../../../styles/CarDetails.css'
 
 export default async function CarDetails({ params }) {
- 
-
-  
-  const { slug } = await params; 
-  console.log(slug)
+  const { slug } = await params;
   let url = `${process.env.NEXT_PUBLIC_API_URL}`
 
   try {
     const res = await fetch(`${url}/api/cars/${slug}`, {
-      cache: "no-store", 
+      cache: "no-store",
     });
 
     if (!res.ok) {

@@ -1,6 +1,6 @@
 
 import Image from "next/image";
-import LuxuryCar from '../../public/luxuryy.jpg'
+import LuxuryCar from '../../public/luxuryy.webp'
 import EconomyCar from '../../public/economy.webp'
 import SUVCar from '../../public/Suv .webp'
 import VanCar from '../../public/Van.webp'

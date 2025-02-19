@@ -1,47 +1,91 @@
+/* Main Container */
 .make-cars-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-  }
-  
-  .make-cars-container h1 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #333;
-  }
-  
+  max-width: 1400px;
+  margin: 50px auto;
+  padding: 20px;
+  margin-top: 100px;
+}
+
+/* Page Heading */
+.make-cars-container h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Grid Layout for Car Cards: Always 2 columns on desktop */
+.make-cars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+/* Car Card */
+.make-car-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.make-car-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Car Image: Increase image size */
+.make-car-card img {
+  width: 100%;
+  /* Use a fixed aspect ratio if needed; otherwise let the image size naturally */
+  height: auto;
+  border-bottom: 2px solid #ddd;
+  border-radius: 8px;
+}
+
+/* Car Info Layout */
+.make-car-card div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+}
+
+/* Car Title & Company */
+.make-car-card h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #222;
+}
+
+.make-car-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #555;
+}
+
+/* Price and Description */
+.make-car-card p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #27ae60;
+  margin: 5px 0 0 auto;
+}
+
+/* Responsive Adjustments: 1 column on mobile */
+@media (max-width: 768px) {
   .make-cars-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr;
   }
-  
-  .make-car-card {
-    display: block;
-    background-color: #fff;
-    border-radius: 8px;
-    text-decoration: none;
-    color: inherit;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-  }
-  
-  .make-car-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  }
-  
-  .make-car-card h2 {
-    font-size: 1.5rem;
-    margin: 1rem 0 0.5rem;
-    padding: 0 1rem;
-  }
-  
-  .make-car-card p {
-    font-size: 1rem;
-    margin: 0.5rem 1rem;
-    color: #666;
-  }
-  
+}

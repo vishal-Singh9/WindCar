@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/Home.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Image from "next/image";
-import FordMustang from '../../public/FordMustang.jpg';
+import FordMustang from '../../public/FordMustang.webp';
 import BCA from '../../public/bc-a.webp';
 import BCB from '../../public/bc-b.webp';
 import BCC from '../../public/bc-c.webp';

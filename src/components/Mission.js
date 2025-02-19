@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Mission1 from '../../public/mission1.png'
-import Mission2 from '../../public/mission2.png'
+import Mission1 from '../../public/mission1.webp'
+import Mission2 from '../../public/mission2.webp'
 import Mission3 from '../../public/mission3.webp'
-import Mission4 from '../../public/Mission4.jpg'
+import Mission4 from '../../public/Mission4.webp'
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -62,36 +62,36 @@ export default function OurMission() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="relative grid grid-cols-2 gap-6"
           >
-           
-                <Image
-                  src={Mission1}
-                  alt="Carento"
-                  width={300}
-                  height={200}
-                  className="rounded-lg object-cover transform hover:scale-105 transition duration-500"
-                />
-                <Image
-                  src={Mission2}
-                  alt="Carento"
-                  width={300}
-                  height={200}
-                  className="rounded-lg object-cover transform hover:scale-105 transition duration-500"
-                />
-                <Image 
-                src={Mission3}
-                alt="Carento"
-                width={300}
-                height={200}
-                className="rounded-lg object-cover transform hover:scale-105 transition duration-500"
-                ></Image>
-                <Image 
-                src={Mission4}
-                alt="Carento"
-                width={300}
-                height={200}
-                className="rounded-lg object-cover transform hover:scale-105 transition duration-500"
-                ></Image>
-    
+
+            <Image
+              src={Mission1}
+              alt="Carento"
+              width={300}
+              height={200}
+              className="rounded-lg object-cover transform hover:scale-105 transition duration-500"
+            />
+            <Image
+              src={Mission2}
+              alt="Carento"
+              width={300}
+              height={200}
+              className="rounded-lg object-cover transform hover:scale-105 transition duration-500"
+            />
+            <Image
+              src={Mission3}
+              alt="Carento"
+              width={300}
+              height={200}
+              className="rounded-lg object-cover transform hover:scale-105 transition duration-500"
+            ></Image>
+            <Image
+              src={Mission4}
+              alt="Carento"
+              width={300}
+              height={200}
+              className="rounded-lg object-cover transform hover:scale-105 transition duration-500"
+            ></Image>
+
           </motion.div>
         </div>
       </div>

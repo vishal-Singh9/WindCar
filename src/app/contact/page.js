@@ -2,10 +2,10 @@
 import Image from "next/image";
 import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import { m, motion } from "framer-motion";
-import NewYork from "../../../public/newyork.jpeg";
-import Tokyo from "../../../public/tokyo.jpeg";
-import London from "../../../public/london.jpeg";
-import Paris from "../../../public/paris.jpeg";
+import NewYork from "../../../public/newyork.webp";
+import Tokyo from "../../../public/tokyo.webp";
+import London from "../../../public/london.webp";
+import Paris from "../../../public/paris.webp";
 import { useState } from "react";
 import Link from "next/link";
 
@@ -68,7 +68,6 @@ export default function Contact() {
 
       return;
     }
-    console.log("Form Submitted", formData); // Add your form submission logic here 
     setFormData({
       firstName: "",
       lastName: "",
@@ -83,39 +82,39 @@ export default function Contact() {
     <div className="min-h-screen bg-gray-50 mt-20">
       {/* Hero Section */}
       <motion.div
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ duration: 1 }}
-  className="relative flex items-center justify-start text-white px-10 border border-white border-opacity-50 rounded-lg"
-  style={{
-    backgroundImage: "url('https://carento-nextjs.vercel.app/assets/imgs/page-header/banner4.png')",
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center",
-    border: "2px solid rgba(255, 255, 255, 0.5)", 
-    boxShadow: "0px 0px 15px rgba(255, 255, 255, 0.2)", 
-    width: "100%", 
-    marginLeft: "auto", 
-    marginRight: "auto", 
-    maxWidth: "1750px", 
-    height: "400px", 
-}}
->
-  {/* Dark overlay */}
-  <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg border border-white border-opacity-50"></div>
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="relative flex items-center justify-start text-white px-10 border border-white border-opacity-50 rounded-lg"
+        style={{
+          backgroundImage: "url('https://carento-nextjs.vercel.app/assets/imgs/page-header/banner4.png')",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          border: "2px solid rgba(255, 255, 255, 0.5)",
+          boxShadow: "0px 0px 15px rgba(255, 255, 255, 0.2)",
+          width: "100%",
+          marginLeft: "auto",
+          marginRight: "auto",
+          maxWidth: "1750px",
+          height: "400px",
+        }}
+      >
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg border border-white border-opacity-50"></div>
 
-  {/* Content Box */}
-  <div className="relative text-left bg-white/10 backdrop-blur-md p-8 rounded-xl shadow-lg max-w-lg border border-white border-opacity-50">
-    <motion.h1
-      initial={{ y: -10, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 0.5 }}
-      className="text-5xl font-bold mb-4 text-white border-b border-white border-opacity-50 pb-2"
-    >
-      Get In Touch
-    </motion.h1>
-  </div>
-</motion.div>
+        {/* Content Box */}
+        <div className="relative text-left bg-white/10 backdrop-blur-md p-8 rounded-xl shadow-lg max-w-lg border border-white border-opacity-50">
+          <motion.h1
+            initial={{ y: -10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className="text-5xl font-bold mb-4 text-white border-b border-white border-opacity-50 pb-2"
+          >
+            Get In Touch
+          </motion.h1>
+        </div>
+      </motion.div>
 
 
 

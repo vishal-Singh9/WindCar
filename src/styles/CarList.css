@@ -1,96 +1,93 @@
 /* Main Container */
 .container {
-    max-width: 1200px;
-    margin: auto;
-    margin-top: 100px;
-    padding: 20px;
+  max-width: 1600px;
+  margin: auto;
+  margin-top: 100px;
+  padding: 20px;
 }
 
 /* Heading */
 h1 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
 }
 
-/* Car List Grid Layout */
+/* Car List Grid Layout: 2 columns on desktop */
 .car-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 0;
-    list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 0;
+  list-style: none;
 }
 
 /* Car Item */
 .car-item {
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
 }
 
 .car-item:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 /* Car Link */
 .car-item a {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    padding: 15px;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding: 15px;
 }
 
-/* Car Image */
+/* Car Image: Use aspect ratio to maintain consistency */
 .car-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    object-position: bottom;
-    border-bottom: 2px solid #ddd;
+  width: 100%;
+  aspect-ratio: 16/9; /* Adjust ratio as needed */
+  object-fit: cover;
+  display: block;
+  border-bottom: 2px solid #ddd;
 }
 
 /* Car Info Layout */
 .car-item div {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
 }
 
 /* Car Name & Company */
 .car-item h3 {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #555;
-    margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #555;
+  margin: 0;
 }
 
 .car-item h2 {
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin: 0;
-    color: #222;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+  color: #222;
 }
 
 /* Price (Right Aligned) */
 .car-item p {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #27ae60;
-    margin: 5px 0 0 auto; /* Pushes price to right */
+  font-size: 1rem;
+  font-weight: 600;
+  color: #27ae60;
+  margin: 5px 0 0 auto;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .car-list {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-
-    .car-item img {
-        height: 180px;
-    }
+  /* Single column for mobile screens */
+  .car-list {
+    grid-template-columns: 1fr;
+  }
 }

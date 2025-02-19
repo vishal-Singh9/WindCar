@@ -7,7 +7,6 @@ export default async function Navbar() {
 
   const res = await fetch(`${url}/api/makes`, { cache: "no-store" });
   const makes = await res.json();
-  console.log("🚀 ~ Navbar ~ makes:", makes)
 
   return (
     <nav className="navbar">
