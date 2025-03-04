@@ -13,16 +13,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "WindCar",
-  description: "WindCar is a website for Car Rent",
+
   openGraph: {
-    title: "Wind Car - Best Car Showcases",
+    title: "Wind Car",
     description: "Explore stunning car visuals and experiences on Wind Car.",
     url: "https://wind-car.vercel.app/",
     type: "website",
     images: [
       {
-        url: "https://wind-car.vercel.app/og-image.jpg",
+        url: "https://static.vecteezy.com/system/resources/thumbnails/007/396/641/small/unique-and-modern-wc-initials-logo-design-free-vector.jpg",
         width: 1200,
         height: 630,
         alt: "Wind Car Preview",
