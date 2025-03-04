@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,10 +14,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-
+  title: "Wind Car",
+  description: "Explore stunning car visuals and experiences on Wind Car.",
+  icons: {
+    icon: "/favicon.ico",
+  },
   openGraph: {
-    title: "Wind Car",
-    description: "Explore stunning car visuals and experiences on Wind Car.",
     url: "https://wind-car.vercel.app/",
     type: "website",
     images: [
@@ -28,16 +31,24 @@ export const metadata = {
       },
     ],
   },
-
 };
+
+
 
 export default function RootLayout({ children }) {
   return (
-
-
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <Head>
+          <link
+            rel="icon"
+            href="/favicon.ico"
+            sizes="64x64"
+            type="image/x-icon"
+          />
+        </Head>
 
         <Navbar />
         {children}
