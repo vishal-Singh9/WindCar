@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import LuxuryCar from '../../public/luxuryy.webp'
 import EconomyCar from '../../public/economy.webp'
@@ -55,7 +54,6 @@ export default function CarRentalServices() {
       {/* Background Pattern */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-10"
-        style={{ backgroundImage: "url('/_next/static/media/car-rental-pattern.png')" }}
       ></div>
 
       <div className="container mx-auto px-6">
@@ -66,11 +64,16 @@ export default function CarRentalServices() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <span className="text-red-600 font-semibold uppercase tracking-wide text-lg">
+          <h1 className="text-black-600 text-4xl font-bold uppercase tracking-wide ">
             Our Services
-          </span>
-          <h2 className="text-4xl font-bold text-gray-900 mt-2">
-            Choose Your Perfect Ride
+
+          </h1>
+
+          <h2 className="text-2xl text-red-400 font-semibold mt-2">
+            <i>
+
+              Choose Your Perfect Ride
+            </i>
           </h2>
         </motion.div>
 

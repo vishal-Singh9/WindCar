@@ -25,7 +25,7 @@ const Counter = ({ value, title1, title2 }) => {
     };
 
     const interval = setInterval(countUp, 50);
-    return () => clearInterval(interval); // Cleanup interval on unmount
+    return () => clearInterval(interval);
   }, [value]);
 
   return (
@@ -51,7 +51,12 @@ const StatisticsSection = () => {
   ];
 
   return (
-    <section className="statistics-section" style={{ backgroundImage: `url(${back.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <section className="statistics-section"
+      style={{
+        backgroundImage: `url(${back.src})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}>
       <div className="statistics-container" >
 
         <div className="statistics-row">

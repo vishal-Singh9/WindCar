@@ -1,0 +1,83 @@
+/* Main Slider Container */
+.slider-container {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+}
+
+/* Main Image Styling */
+.main-car-image {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Thumbnail Navigation */
+.slick-dots {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+/* Individual Thumbnail */
+.slick-dots li {
+  width: 80px;
+  height: 60px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slick-dots li:hover {
+  transform: scale(1.1);
+}
+
+/* Thumbnail Image */
+.slick-dots li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.slick-dots li a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  transition: border 0.3s ease-in-out;
+}
+
+/* Highlight Selected Thumbnail */
+.slick-dots li.slick-active a img {
+  border: 2px solid #ff5722;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-car-image {
+    height: 300px;
+  }
+
+  .slick-dots li {
+    width: 60px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-car-image {
+    height: 250px;
+  }
+
+  .slick-dots li {
+    width: 50px;
+    height: 40px;
+  }
+}

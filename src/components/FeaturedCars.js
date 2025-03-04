@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import background from '../../public/bbc.webp'
 import Link from 'next/link';
+import Image from 'next/image';
+import background from '../../public/bbc.webp';
 import Nissan from '../../public/Nissan.webp';
 import Porsche from '../../public/porsche.webp';
 import Tesla from '../../public/teslas.webp';
@@ -38,29 +38,32 @@ const featuredCars = [
   },
 ];
 
-const StarRating = ({ rating, reviews }) => (
-  <div className="flex items-center gap-1 text-yellow-400 text-sm">
-    {[...Array(5)].map((_, index) => (
-      <span key={index}>{index < rating ? '★' : '☆'}</span>
-    ))}
-    <span className="text-gray-500 ml-2">({reviews} reviews)</span>
-  </div>
-);
+const StarRating = ({ rating, reviews }) => {
+  // Round rating to nearest integer
+  const fullStars = Math.floor(rating);
+  return (
+    <div className="flex items-center gap-1 text-yellow-400 text-sm">
+      {[...Array(5)].map((_, index) => (
+        <span key={index}>{index < fullStars ? '★' : '☆'}</span>
+      ))}
+      <span className="text-gray-500 ml-2">({reviews} reviews)</span>
+    </div>
+  );
+};
 
 export default function FeaturedCars() {
   return (
-    <section
-      className="relative py-16 bg-gray-100 text-center"
-
-    >
-      <Image src={background} alt="Background" layout="fill"></Image>
-      {/* Blur Overlay */}
+    <section className="relative py-16 bg-gray-100 text-center">
+      {/* Background with Blur Overlay */}
+      <div className="absolute inset-0">
+        <Image src={background} alt="Background" fill objectFit="cover" />
+      </div>
       <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-md"></div>
 
       <div className="relative max-w-6xl mx-auto px-6">
         {/* Section Header */}
         <div className="mb-10 text-white">
-          <h2 className="text-3xl font-semibold">Featured Cars</h2>
+          <h2 className="text-4xl text-white font-semibold">Featured Cars</h2>
           <div className="w-16 h-1 bg-blue-500 mx-auto my-3"></div>
           <p className="text-gray-300">
             Explore our premium vehicles, chosen for performance, comfort, and style.
@@ -75,11 +78,11 @@ export default function FeaturedCars() {
               className="bg-white bg-opacity-90 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105"
             >
               {/* Car Image */}
-              <div className="relative h-48">
+              <div className="relative h-56">
                 <Image
                   src={car.image}
                   alt={car.name}
-                  layout="fill"
+                  fill
                   objectFit="cover"
                   className="rounded-t-lg"
                 />
@@ -94,7 +97,7 @@ export default function FeaturedCars() {
                 <StarRating rating={car.rating} reviews={car.reviews} />
 
                 {/* Features */}
-                <ul className="text-sm text-gray-600 my-2">
+                <ul className="text-sm text-gray-600 my-2 space-y-1">
                   {car.features.map((feature, index) => (
                     <li key={index} className="flex items-center gap-2">
                       ✅ {feature}
@@ -102,9 +105,9 @@ export default function FeaturedCars() {
                   ))}
                 </ul>
 
-                {/* Price & Button */}
-                <div className="flex justify-between items-center mt-4">
-                  <span className="text-lg font-bold text-blue-600">${car.price} /day</span>
+                {/* Price */}
+                <div className="mt-4">
+                  <span className="text-xl font-bold text-blue-600">${car.price} /day</span>
                 </div>
               </div>
             </div>

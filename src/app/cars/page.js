@@ -81,6 +81,7 @@ export default async function CarList() {
                         </li>
                     ))}
                 </ul>
-            </div>   </div>
+            </div>
+        </div>
     );
 }

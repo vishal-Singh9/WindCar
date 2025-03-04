@@ -1,18 +1,16 @@
 import { notFound } from "next/navigation";
+import CarSlider from "@/components/CarSlider";
 import '../../../styles/CarDetails.css'
 
 export default async function CarDetails({ params }) {
   const { slug } = await params;
-  let url = `${process.env.NEXT_PUBLIC_API_URL}`
 
   try {
-    const res = await fetch(`${url}/api/cars/${slug}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/cars/${slug}`, {
       cache: "no-store",
     });
 
-    if (!res.ok) {
-      return notFound();
-    }
+    if (!res.ok) return notFound();
 
     const car = await res.json();
 
@@ -20,50 +18,27 @@ export default async function CarDetails({ params }) {
       <div className="car-details-container">
         {/* Left Section - Image Gallery */}
         <div className="car-images-section">
-          <img className="main-car-image" src={car.thumbnail} alt={car.name || "Car"} />
-          <div className="image-gallery">
-            {[car.thumbnail, ...(car.images || [])].map(
-              (img, index) =>
-                img && (
-                  <img
-                    key={index}
-                    src={img}
-                    alt={`Car image ${index + 1}`}
-                    className="gallery-image"
-                  />
-                )
-            )}
-          </div>
+          <CarSlider images={[car.thumbnail, ...(car.images || [])]} />
           <div className="offers-container">
-            <div className="offer-box">
-              <span className="icon icon-dollar-square1"></span>
-              <ul className="offer-content">
-                <li><span>Security Deposit: $2k - $10k</span></li>
-                <li><span>Minimum Day: 1</span></li>
-              </ul>
-            </div>
-            <div className="offer-box">
-              <span className="icon icon-dollar-square1"></span>
-              <ul className="offer-content">
-                <li><span>50 free miles a day</span></li>
-                <li><span>$5 per extra mile</span></li>
-              </ul>
-            </div>
+            <OfferBox className="offer-box" title="Security Deposit" details={["$2k - $10k", "Minimum Day: 1"]} />
+            <OfferBox className="offer-box" title="Mileage Policy" details={["50 free miles a day", "$5 per extra mile"]} />
           </div>
+          <p className="car-description">
+            <strong>Description:</strong> {car?.details}
+          </p>
         </div>
 
         {/* Right Section - Car Details */}
         <div className="car-info">
-          <h1 className="car-name"><strong>{car.name}</strong></h1>
-          <p className="car-price"><strong>Price:</strong> ${car.price}/day</p>
-          <p className="car-details"><strong>Color:</strong> {car.color}</p>
-          <p className="car-details"><strong>Engine:</strong> {car.engine}</p>
-          <p className="car-details"><strong>Model:</strong> {car.model}</p>
-          <p className="car-details"><strong>Year:</strong> {car.year}</p>
-          <p className="car-details"><strong>Mileage:</strong> {car.mileage} km</p>
-          <p className="car-details"><strong>Fuel Type:</strong> {car.fuelType}</p>
-          <p className="car-details"><strong>Transmission:</strong> {car.transmission}</p>
-          <p className="car-description"><strong>Description:</strong> {car.details}</p>
+          <h1 className="car-name">{car?.name}</h1>
+          <CarDetail label="Price" value={`$${car?.price}/day`} />
+          <CarDetail label="Color" value={car?.color} />
+          <CarDetail label="Engine" value={car?.engine} />
+          <CarDetail label="Model" value={car?.model} />
+          <CarDetail label="Year" value={car?.year} />
+          <CarDetail label="Mileage" value={`${car?.mileage} km`} />
+          <CarDetail label="Fuel Type" value={car?.fuelType} />
+          <CarDetail label="Transmission" value={car?.transmission} />
         </div>
       </div>
     );
@@ -72,3 +47,18 @@ export default async function CarDetails({ params }) {
     return notFound();
   }
 }
+
+const OfferBox = ({ title, details }) => (
+  <div className="offer-box">
+    <span className="icon icon-dollar-square1"></span>
+    <ul className="offer-content">
+      {details.map((detail, index) => (
+        <li key={index}><span>{detail}</span></li>
+      ))}
+    </ul>
+  </div>
+);
+
+const CarDetail = ({ label, value }) => (
+  <p className="car-details"><strong>{label}:</strong> {value}</p>
+);
