@@ -15,6 +15,21 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "WindCar",
   description: "WindCar is a website for Car Rent",
+  openGraph: {
+    title: "Wind Car - Best Car Showcases",
+    description: "Explore stunning car visuals and experiences on Wind Car.",
+    url: "https://wind-car.vercel.app/",
+    type: "website",
+    images: [
+      {
+        url: "https://wind-car.vercel.app/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Wind Car Preview",
+      },
+    ],
+  },
+
 };
 
 export default function RootLayout({ children }) {
@@ -23,6 +38,8 @@ export default function RootLayout({ children }) {
 
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+
+
         <Navbar />
         {children}
       </body>

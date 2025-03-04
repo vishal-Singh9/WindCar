@@ -13,7 +13,7 @@ export default async function Navbar() {
       {/* Logo */}
       <div className="logo">
         <Link href="/">
-          <img src="/windcarlogo.png" alt="Car Rentals" />
+          <img src="/wcc.webp" alt="Car Rentals" />
         </Link>
       </div>
 

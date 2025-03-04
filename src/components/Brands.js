@@ -22,9 +22,9 @@ const Brands = () => {
       <div className="brands-slider">
         <div className="brands-track">
           {/* Duplicating brands for smooth looping */}
-          {[...brands, ...brands].map((brand, index) => (
+          {brands?.map((brand, index) => (
             <div key={index} className="brand-item">
-              <img src={brand.light} alt={brand.name} />
+              <img src={brand?.light} alt={brand.name} />
             </div>
           ))}
         </div>
