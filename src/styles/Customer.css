@@ -1,151 +1,149 @@
 /* Customer.css */
 
 .testimonial-section {
-    padding: 80px 20px;
-    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-    font-family: 'Arial', sans-serif;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+}
+
+.customer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.heading h3 {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #333;
+  margin-bottom: 50px;
+  position: relative;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+/* Animation for heading */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
   }
-  
-  .customer-container {
-    max-width: 1400px;
-    margin: 0 auto;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .heading h3 {
-    text-align: center;
-    font-size: 2.8rem;
-    color: #333;
-    margin-bottom: 50px;
-    position: relative;
-    animation: fadeInDown 1s ease-in-out;
-  }
-  
-  /* Animation for heading */
-  @keyframes fadeInDown {
-    from {
-      opacity: 0;
-      transform: translateY(-30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .testimonial-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-  }
-  
+}
+
+.testimonial-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.testimonial-box {
+  background: #fff;
+  border: 2px solid #ddd; /* initial subtle border */
+  border-radius: 15px;
+  padding: 30px 20px;
+  width: calc(50% - 30px);
+  position: relative;
+  transition: transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.testimonial-box:hover {
+  transform: translateY(-10px) scale(1.02);
+  border: 3px solid #333; /* Bold border on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-head {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.client {
+  display: flex;
+  align-items: center;
+}
+
+/* Increase size of the client image */
+.client-img {
+  border-radius: 50%;
+  border: 3px solid #ddd;
+  width: 80px !important;
+  height: 80px !important;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* On hover, the image enlarges and border becomes bolder */
+.client-img:hover {
+  transform: scale(1.2);
+  border-color: #333;
+}
+
+.client-info {
+  margin-left: 15px;
+}
+
+.client-name {
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.rating {
+  margin-top: 5px;
+  display: flex;
+  gap: 3px;
+}
+
+.testimonial-text p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.testimonial-box:hover .testimonial-text p {
+  color: #000;
+}
+
+.quote {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0.1;
+  transition: opacity 0.3s ease;
+}
+
+.testimonial-box:hover .quote {
+  opacity: 0.15;
+}
+
+/* YouTube iframe container styling */
+.container .flex {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+iframe {
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  transition: border 0.3s ease, transform 0.3s ease;
+}
+
+iframe:hover {
+  border: 3px solid #333;
+  transform: scale(1.02);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
   .testimonial-box {
-    background: #fff;
-    border: 2px solid #ddd; /* initial subtle border */
-    border-radius: 15px;
-    padding: 30px 20px;
-    width: calc(50% - 30px);
-    position: relative;
-    transition: transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
+    width: 100%;
   }
-  
-  .testimonial-box:hover {
-    transform: translateY(-10px) scale(1.02);
-    border: 3px solid #333; /* Bold border on hover */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  .heading h3 {
+    font-size: 2rem;
   }
-  
-  .testimonial-head {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .client {
-    display: flex;
-    align-items: center;
-  }
-  
-  /* Increase size of the client image */
-  .client-img {
-    border-radius: 50%;
-    border: 3px solid #ddd;
-    width: 80px !important;
-    height: 80px !important;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-  }
-  
-  /* On hover, the image enlarges and border becomes bolder */
-  .client-img:hover {
-    transform: scale(1.2);
-    border-color: #333;
-  }
-  
-  .client-info {
-    margin-left: 15px;
-  }
-  
-  .client-name {
-    font-weight: bold;
-    font-size: 1.4rem;
-    color: #333;
-  }
-  
-  .rating {
-    margin-top: 5px;
-    display: flex;
-    gap: 3px;
-  }
-  
-  .testimonial-text p {
-    font-size: 1.1rem;
-    color: #555;
-    line-height: 1.6;
-    transition: color 0.3s ease;
-  }
-  
-  .testimonial-box:hover .testimonial-text p {
-    color: #000;
-  }
-  
-  .quote {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    opacity: 0.1;
-    transition: opacity 0.3s ease;
-  }
-  
-  .testimonial-box:hover .quote {
-    opacity: 0.15;
-  }
-  
-  /* YouTube iframe container styling */
-  .container .flex {
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  iframe {
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    transition: border 0.3s ease, transform 0.3s ease;
-  }
-  
-  iframe:hover {
-    border: 3px solid #333;
-    transform: scale(1.02);
-  }
-  
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .testimonial-box {
-      width: 100%;
-    }
-    .heading h3 {
-      font-size: 2rem;
-    }
-  }
-  
+}

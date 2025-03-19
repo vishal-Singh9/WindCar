@@ -24,23 +24,20 @@ const CarSearchForm = () => {
   const [dropoffLocation, setDropoffLocation] = useState("");
   const [pickupDate, setPickupDate] = useState(new Date());
   const [returnDate, setReturnDate] = useState(new Date());
-  const [showPickupList, setShowPickupList] = useState(false);
-  const [showDropoffList, setShowDropoffList] = useState(false);
 
   const handleSubmit = async () => {
     if (!pickupLocation || !dropoffLocation) {
       alert("Please select both pickup and dropoff locations.");
       return;
     }
-  
+
     const formData = {
       pickupLocation,
       dropoffLocation,
       pickupDate: pickupDate.toISOString(),
       returnDate: returnDate.toISOString(),
     };
-  
-  
+
     try {
       const response = await fetch("/api/carSearch", {
         method: "POST",
@@ -49,12 +46,15 @@ const CarSearchForm = () => {
         },
         body: JSON.stringify(formData),
       });
-  
+
       const data = await response.json();
-  
-  
+
       if (response.ok) {
         alert("Search submitted successfully!");
+        setPickupDate(new Date());
+        setReturnDate(new Date());
+        setPickupLocation("");
+        setDropoffLocation("");
       } else {
         alert("Error submitting search. Please try again.");
       }
@@ -62,81 +62,38 @@ const CarSearchForm = () => {
       console.error("Error submitting search:", error);
     }
   };
-  
 
   return (
     <div className="box-search-advance background-card fadeIn">
-      {/* Top Section */}
-      <div className="box-top-search">
-        <div className="left-top-search">
-          <button className="category-link text-sm-bold btn-click active">All Cars</button>
-        </div>
-        <div className="right-top-search d-none d-md-flex">
-          <Link href="/contact" className="text-sm-medium need-some-help">Need help?</Link>
-        </div>
-      </div>
-
-      {/* Search Form */}
       <div className="box-bottom-search">
-        {/* Pickup Location */}
         <div className="item-search">
-          <label className="text-sm-bold neutral-500">Pick Up</label>
-          <div className="search-input-wrapper">
-            <input
-              type="text"
-              className="search-input"
-              value={pickupLocation}
-              placeholder="Select Pickup Location"
-              readOnly
-              onClick={() => setShowPickupList(!showPickupList)}
-            />
+          <label>Pick Up</label>
+          <div className="select-wrapper">
+            <select value={pickupLocation} onChange={(e) => setPickupLocation(e.target.value)}>
+              <option value="">Select Pickup Location</option>
+              {locations?.map((loc, index) => (
+                <option key={index} value={loc}>{loc}</option>
+              ))}
+            </select>
             <IoLocationSharp className="location-icon" />
           </div>
-          {showPickupList && (
-            <ul className="location-dropdown">
-              {locations.map((loc, index) => (
-                <li key={index} onClick={() => {
-                  setPickupLocation(loc);
-                  setShowPickupList(false);
-                }}>
-                  {loc}
-                </li>
-              ))}
-            </ul>
-          )}
         </div>
 
-        {/* Dropoff Location */}
         <div className="item-search">
-          <label className="text-sm-bold neutral-500">Drop Off</label>
-          <div className="search-input-wrapper">
-            <input
-              type="text"
-              className="search-input"
-              value={dropoffLocation}
-              placeholder="Select Dropoff Location"
-              readOnly
-              onClick={() => setShowDropoffList(!showDropoffList)}
-            />
+          <label>Drop Off</label>
+          <div className="select-wrapper">
+            <select value={dropoffLocation} onChange={(e) => setDropoffLocation(e.target.value)}>
+              <option value="">Select Dropoff Location</option>
+              {locations?.map((loc, index) => (
+                <option key={index} value={loc}>{loc}</option>
+              ))}
+            </select>
             <IoLocationSharp className="location-icon" />
           </div>
-          {showDropoffList && (
-            <ul className="location-dropdown">
-              {locations.map((loc, index) => (
-                <li key={index} onClick={() => {
-                  setDropoffLocation(loc);
-                  setShowDropoffList(false);
-                }}>
-                  {loc}
-                </li>
-              ))}
-            </ul>
-          )}
         </div>
 
-        {/* Pickup Date */}
         <div className="item-search">
-          <label className="text-sm-bold neutral-500">Pick Up Date</label>
+          <label>Pick Up Date</label>
           <DatePicker
             selected={pickupDate}
             onChange={(date) => setPickupDate(date)}
@@ -144,9 +101,8 @@ const CarSearchForm = () => {
           />
         </div>
 
-        {/* Return Date */}
         <div className="item-search">
-          <label className="text-sm-bold neutral-500">Return Date</label>
+          <label>Return Date</label>
           <DatePicker
             selected={returnDate}
             onChange={(date) => setReturnDate(date)}
@@ -154,10 +110,8 @@ const CarSearchForm = () => {
           />
         </div>
 
-        {/* Search Button */}
         <button className="btn-brand-2" onClick={handleSubmit}>
-          <FaSearch />
-          Find a Vehicle
+          <FaSearch /> Find a Vehicle
         </button>
       </div>
     </div>

@@ -37,7 +37,7 @@ export default async function MakePage({ params }) {
                     <p>No cars available for this make.</p>
                 ) : (
                     cars.map((car) => (
-                        <Link key={car._id} href={`/makes/${make}/${car._id}`} className="make-car-card">
+                        <Link key={car._id} href={`/makes/${make}/${car?.name}`} className="make-car-card">
                             {car.thumbnail ? (
                                 <Image src={car.thumbnail} alt={car.name} width={400} height={300} />
                             ) : (

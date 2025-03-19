@@ -39,6 +39,7 @@ const featuredCars = [
 ];
 
 const StarRating = ({ rating, reviews }) => {
+
   // Round rating to nearest integer
   const fullStars = Math.floor(rating);
   return (
@@ -72,7 +73,8 @@ export default function FeaturedCars() {
 
         {/* Cars Grid */}
         <div className="grid md:grid-cols-3 gap-8">
-          {featuredCars.map((car) => (
+          {/* <Link key={car.id} href={`/cars/${car.id}`} passHref> */}
+          {featuredCars?.map((car) => (
             <div
               key={car.id}
               className="bg-white bg-opacity-90 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105"
@@ -112,6 +114,8 @@ export default function FeaturedCars() {
               </div>
             </div>
           ))}
+          {/* </Link> */}
+
         </div>
 
         {/* View All Button */}
@@ -121,8 +125,9 @@ export default function FeaturedCars() {
               View All Cars
             </span>
           </Link>
+
         </div>
       </div>
-    </section>
+    </section >
   );
 }

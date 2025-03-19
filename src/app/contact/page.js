@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Image from "next/image";
 import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import { m, motion } from "framer-motion";
@@ -8,7 +8,6 @@ import London from "../../../public/london.webp";
 import Paris from "../../../public/paris.webp";
 import { useState } from "react";
 import Link from "next/link";
-
 
 const team = [
   {
@@ -51,8 +50,6 @@ export default function Contact() {
     agreed: false,
   });
 
-
-
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
@@ -74,8 +71,8 @@ export default function Contact() {
       email: "",
       phone: "",
       message: "",
-      agreed: false
-    })
+      agreed: false,
+    });
   };
 
   return (
@@ -85,19 +82,13 @@ export default function Contact() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="relative flex items-center justify-start text-white px-10 border border-white border-opacity-50 rounded-lg"
+        className="relative bg-cover bg-center h-[450px] flex items-center justify-start text-white px-10"
         style={{
-          backgroundImage: "url('https://carento-nextjs.vercel.app/assets/imgs/page-header/banner4.png')",
+          backgroundImage:
+            "url('https://carento-nextjs.vercel.app/assets/imgs/page-header/banner4.png')",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
-          border: "2px solid rgba(255, 255, 255, 0.5)",
-          boxShadow: "0px 0px 15px rgba(255, 255, 255, 0.2)",
-          width: "100%",
-          marginLeft: "auto",
-          marginRight: "auto",
-          maxWidth: "1750px",
-          height: "400px",
         }}
       >
         {/* Dark overlay */}
@@ -116,12 +107,11 @@ export default function Contact() {
         </div>
       </motion.div>
 
-
-
-
       {/* Meet Our Team */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 text-center">
-        <h2 className="text-4xl font-extrabold text-gray-900 mb-4">Our Agents Worldwide</h2>
+        <h2 className="text-4xl font-extrabold text-gray-900 mb-4">
+          Our Agents Worldwide
+        </h2>
         <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -131,7 +121,10 @@ export default function Contact() {
               initial={{ scale: 0.9, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              whileHover={{ scale: 1.05, boxShadow: "0px 10px 20px rgba(0,0,0,0.3)" }}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0px 10px 20px rgba(0,0,0,0.3)",
+              }}
               className="bg-white rounded-lg shadow-lg p-6 transition transform hover:shadow-2xl border-t-4 border-blue-600"
             >
               <div className="relative w-40 h-40 mx-auto mb-4 rounded-full overflow-hidden shadow-md border-4 border-blue-500">
@@ -153,13 +146,19 @@ export default function Contact() {
                 </div>
                 <div className="flex items-center justify-center space-x-2">
                   <FaEnvelope className="text-blue-600" />
-                  <a href={`mailto:${member.email}`} className="hover:text-blue-500">
+                  <a
+                    href={`mailto:${member.email}`}
+                    className="hover:text-blue-500"
+                  >
                     {member.email}
                   </a>
                 </div>
                 <div className="flex items-center justify-center space-x-2">
                   <FaPhoneAlt className="text-blue-600" />
-                  <a href={`tel:${member.phone}`} className="hover:text-blue-500">
+                  <a
+                    href={`tel:${member.phone}`}
+                    className="hover:text-blue-500"
+                  >
                     {member.phone}
                   </a>
                 </div>
@@ -167,12 +166,18 @@ export default function Contact() {
             </motion.div>
           ))}
         </div>
-
       </div>
 
-      <div className="max-w-8xl mx-auto px-6 lg:px-8 py-20 flex justify-end"
-        style={{ backgroundImage: "url('https://www.rolls-roycemotorcars.com/content/dam/rrmc/marketUK/rollsroycemotorcars_com/blue-shadow_cullinan/page-properties/D-Bespoke-Update.jpg/jcr:content/renditions/original')", backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}>
-
+      <div
+        className="max-w-8xl mx-auto px-6 lg:px-8 py-20 flex justify-end"
+        style={{
+          backgroundImage:
+            "url('https://www.rolls-roycemotorcars.com/content/dam/rrmc/marketUK/rollsroycemotorcars_com/blue-shadow_cullinan/page-properties/D-Bespoke-Update.jpg/jcr:content/renditions/original')",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="flex flex-col items-center px-6 text-center">
           <h1 className="text-4xl font-bold mb-6 text-white">Our Location</h1>
           <iframe
@@ -184,11 +189,9 @@ export default function Contact() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
-
-
         </div>
 
-        <div className="w-full max-w-2xl p-6 bg-white shadow-lg rounded-lg flex flex-col justify-left items-center" >
+        <div className="w-full max-w-2xl p-6 bg-white shadow-lg rounded-lg flex flex-col justify-left items-center">
           <h2 className="text-2xl font-bold mb-6">Get in Touch</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
@@ -262,7 +265,14 @@ export default function Contact() {
                 className="mr-2"
               />
               <label className="text-gray-700 text-sm">
-                Agree to our <Link href="/term" className="text-blue-500">Terms of Service</Link> and <Link href="/privacy" className="text-blue-500">Privacy Policy</Link>
+                Agree to our{" "}
+                <Link href="/term" className="text-blue-500">
+                  Terms of Service
+                </Link>{" "}
+                and{" "}
+                <Link href="/privacy" className="text-blue-500">
+                  Privacy Policy
+                </Link>
               </label>
             </div>
             <button
@@ -289,11 +299,7 @@ export default function Contact() {
             </button>
           </form>
         </div>
-
-
       </div>
-
-
     </div>
   );
 }

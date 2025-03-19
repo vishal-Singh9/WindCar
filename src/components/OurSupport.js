@@ -45,67 +45,67 @@ export default function OurSupport() {
   };
 
   return (
-    <div  style={{ backgroundImage: `url('https://i.pinimg.com/736x/4c/25/ab/4c25ab264539ced3ff06d09775ba52db.jpg')` , backgroundSize: 'cover', backgroundPosition: 'center' ,backgroundAttachment: 'fixed'}}>
+    <div style={{ backgroundImage: `url('https://i.pinimg.com/736x/4c/25/ab/4c25ab264539ced3ff06d09775ba52db.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
 
 
-    <div className="max-w-4xl mx-auto p-8">
-      {/* Header */}
-      <div className="text-center">
-        <span className="bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold">
-          Our Support
-        </span>
-        <h3 className="text-4xl font-bold text-white mt-4">
-          Frequently Asked Questions
-        </h3>
-      </div>  
+      <div className="max-w-4xl mx-auto p-8">
+        {/* Header */}
+        <div className="text-center">
+          <span className="bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold">
+            Our Support
+          </span>
+          <h3 className="text-4xl font-bold text-white mt-4">
+            Frequently Asked Questions
+          </h3>
+        </div>
 
-      {/* FAQ List */}
-      <div className="mt-8 space-y-4">
-        {faqs.map((faq, index) => (
-          <div
-            key={faq.id}
-            className="border border-gray-300 rounded-xl overflow-hidden shadow-md transition-all hover:shadow-xl bg-white"
-          >
-            {/* Question */}
-            <button
-              onClick={() => toggleFAQ(index)}
-              className="w-full flex items-center justify-between px-6 py-4 text-left text-gray-900 font-medium text-lg bg-white hover:bg-gray-50 transition-all"
+        {/* FAQ List */}
+        <div className="mt-8 space-y-4">
+          {faqs.map((faq, index) => (
+            <div
+              key={faq.id}
+              className="border border-gray-300 rounded-xl overflow-hidden shadow-md transition-all hover:shadow-xl bg-white"
             >
-              <span className="flex items-center gap-4">
-                <span className="text-blue-600 font-bold text-xl">{index + 1}</span>
-                {faq.question}
-              </span>
-              <span className="text-blue-500 text-2xl font-bold">
-                {activeIndex === index ? "−" : "+"}
-              </span>
-            </button>
+              {/* Question */}
+              <button
+                onClick={() => toggleFAQ(index)}
+                className="w-full flex items-center justify-between px-6 py-4 text-left text-gray-900 font-medium text-lg bg-white hover:bg-gray-50 transition-all"
+              >
+                <span className="flex items-center gap-4">
+                  <span className="text-blue-600 font-bold text-xl">{index + 1}</span>
+                  {faq.question}
+                </span>
+                <span className="text-blue-500 text-2xl font-bold">
+                  {activeIndex === index ? "−" : "+"}
+                </span>
+              </button>
 
-            {/* Answer */}
-            {activeIndex === index && (
-              <div className="px-6 py-4 bg-gray-50 text-gray-700 text-base border-t border-gray-200 animate-fadeIn">
-                {faq.answer}
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
+              {/* Answer */}
+              {activeIndex === index && (
+                <div className="px-6 py-4 bg-gray-50 text-gray-700 text-base border-t border-gray-200 animate-fadeIn">
+                  {faq.answer}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
 
-      {/* Footer Links */}
-      <div className="mt-8 flex justify-center gap-4">
-        <a
-          className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold text-lg hover:bg-blue-700 transition"
-          href="/"
-        >
-          Contact Us
-        </a>
-        <a
-          className="bg-gray-100 text-gray-800 px-6 py-3 rounded-lg font-semibold text-lg hover:bg-gray-200 transition"
-          href="/"
-        >
-          Help Center
-        </a>
+        {/* Footer Links */}
+        <div className="mt-8 flex justify-center gap-4">
+          <a
+            className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold text-lg hover:bg-blue-700 transition"
+            href="/contact"
+          >
+            Contact Us
+          </a>
+          <a
+            className="bg-gray-100 text-gray-800 px-6 py-3 rounded-lg font-semibold text-lg hover:bg-gray-200 transition"
+            href="/"
+          >
+            Help Center
+          </a>
+        </div>
       </div>
-    </div>
     </div>
   );
 }

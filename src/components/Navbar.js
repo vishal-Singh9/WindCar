@@ -25,7 +25,7 @@ export default async function Navbar() {
         <div className="dropdown">
           <span>Makes</span>
           <ul className="dropdown-menu">
-            {makes.map((make) => (
+            {makes?.map((make) => (
               <li key={make._id}>
                 <Link href={`/makes/${make.name.toLowerCase()}`}>
                   {make.name}

@@ -96,9 +96,7 @@ export default function CarRentalServices() {
                   height={250}
                   className="w-full h-60 object-cover transition-transform hover:scale-105"
                 />
-                <div className="absolute top-4 left-4 bg-red-600 text-white p-2 rounded-full shadow-md">
-                  <span className={`text-2xl ${service.icon}`}></span>
-                </div>
+
               </div>
               <div className="p-6 text-center">
                 <h3 className="text-xl font-semibold text-gray-800">

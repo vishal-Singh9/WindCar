@@ -61,7 +61,7 @@ export default async function CarList() {
                 {/* Car List Section */}
                 <h1 className="text-center mt-8 text-5xl font-semibold">Available Cars</h1>
                 <ul className="car-list">
-                    {cars.map((car) => (
+                    {cars?.map((car) => (
                         <li key={car._id} className="car-item">
                             <Link
                                 href={`/cars/${car?.name || car?.slug}`}

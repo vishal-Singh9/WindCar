@@ -49,13 +49,10 @@ export default function About() {
           backgroundImage: "url('https://carento-nextjs.vercel.app/assets/imgs/page-header/banner.png')", backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
-          border: "2px solid rgba(255, 255, 255, 0.5)",
-          boxShadow: "0px 0px 15px rgba(255, 255, 255, 0.2)",
-          width: "100%",
-          marginLeft: "auto",
-          marginRight: "auto",
-          maxWidth: "1750px",
-          height: "400px",
+
+
+
+
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
