@@ -13,6 +13,7 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "framer-motion": "^12.4.2",
+    "lucide-react": "^0.483.0",
     "mongoose": "^8.10.0",
     "next": "^15.1.6",
     "nodemon": "^3.1.9",
@@ -24,7 +25,8 @@
     "react-router-dom": "^7.1.5",
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1",
-    "swiper": "^11.2.5"
+    "swiper": "^11.2.5",
+    "utils": "^0.3.1"
   },
   "devDependencies": {
     "postcss": "^8",
