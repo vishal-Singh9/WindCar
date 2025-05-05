@@ -111,7 +111,7 @@ const CarSearchForm = () => {
         </div>
 
         <button className="btn-brand-2" onClick={handleSubmit}>
-          <FaSearch /> Find a Vehicle
+          <FaSearch /> Find
         </button>
       </div>
     </div>

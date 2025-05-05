@@ -1,60 +1,59 @@
 .brands-section {
-    background-color: #f3f4f6;
-    padding: 20px 0;
-    text-align: center;
-    overflow: hidden;
-  }
-  
-  .brands-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #333;
-  }
-  
-  .brands-slider {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-  }
-  
-  .brands-track {
-    display: flex;
-    width: calc(200px * 14 * 2); /* Adjust width based on the number of brands */
-    animation: scrollBrands 20s linear infinite;
-  }
-  
-  .brand-item {
-    flex: 0 0 200px;
-    text-align: center;
-    padding: 10px;
-  }
-  
-  .brand-item img {
-    max-width: 100%;
-    height: auto;
-  }
+  padding: 20px 0;
+  text-align: center;
+  overflow: hidden;
+}
 
-  .brands-title{
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #1b6cdd;
+.brands-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.brands-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.brands-track {
+  display: flex;
+  width: calc(200px * 14 * 2); /* Adjust width based on the number of brands */
+  animation: scrollBrands 20s linear infinite;
+}
+
+.brand-item {
+  flex: 0 0 200px;
+  text-align: center;
+  padding: 10px;
+}
+
+.brand-item img {
+  max-width: 100%;
+  height: auto;
+  height: 50px;
+}
+
+.brands-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #1b6cdd;
+}
+.brands-subtitle {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Animation */
+@keyframes scrollBrands {
+  from {
+    transform: translateX(0);
   }
-  .brands-subtitle{
-    font-size: 1rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #333;
+  to {
+    transform: translateX(-50%);
   }
-  
-  /* Animation */
-  @keyframes scrollBrands {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%);
-    }
-  }
-  
+}

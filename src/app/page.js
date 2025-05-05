@@ -17,6 +17,7 @@ import GallerySection from '@/components/GallerySection'
 import CarRentalServices from '@/components/ServicesSection'
 import CarVideoSlider from '@/components/CarVideo'
 
+
 const page = () => {
   return (
     <div>
@@ -36,6 +37,7 @@ const page = () => {
       <Testimonials />
       <Newsletter subscriberCount={1000} />
       <Footer />
+
     </div>
   )
 }

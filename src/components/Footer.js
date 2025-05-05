@@ -64,7 +64,7 @@ export default function Footer() {
             </div>
           ))}
 
-         
+
         </div>
 
         {/* Bottom Bar */}
@@ -76,6 +76,22 @@ export default function Footer() {
             <Link href="#" className="hover:text-white">Cookie Policy</Link>
           </div>
         </div>
+        <div
+          data-aos="flip-left"
+          data-aos-offset="0"
+          className="font-medium text-center p-5 aos-init aos-animate bg-gray-900 text-white text-lg md:text-xl rounded-lg shadow-lg"
+        >
+          Designed & Developed By <br />
+          <a
+            className="text-yellow-400 hover:underline font-semibold transition duration-300 ease-in-out gap-2"
+            href="https://github.com/vishal-Singh9"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Vishal Singh
+          </a>
+        </div>
+
       </div>
     </footer>
   )
