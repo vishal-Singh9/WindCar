@@ -18,6 +18,7 @@ export default function OurMission() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="space-y-6"
           >
+
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
